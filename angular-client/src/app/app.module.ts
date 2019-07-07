@@ -51,6 +51,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ClientComponent } from './client/client.component';
 import { CreateformComponent } from './client/createform/createform.component';
 import { ClientService} from "./services/client.service";
+import { PromotionComponent } from "./promotion/promotion.component";
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ClientService} from "./services/client.service";
     ContactComponent,
     LoginComponent,
     ClientComponent,
-    CreateformComponent
+    CreateformComponent,
+    PromotionComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,

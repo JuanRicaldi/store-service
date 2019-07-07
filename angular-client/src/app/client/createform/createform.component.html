@@ -3,7 +3,7 @@
 
   <mat-toolbar fxLayout="row" mat-dialog-title color="primary">
     <div fxFlex>
-      <h3 layout-align="center center">Crear nuevo cliente </h3>
+      <h3 layout-align="center center">Crear nuevo cliente</h3>
     </div>
     <span fxFlex class="flex-spacer"></span>
     <div fxFlex align="end">
@@ -38,9 +38,6 @@
         </mat-hint>
       </mat-form-field>
 
-
-
-
       <mat-form-field color="{{emailClient.invalid && !emailClient.pristine ? 'warn' : 'primary'}}">
         <input matInput placeholder="Email " type="email" [(ngModel)]="client.emailClient" name="emailClient"
                #emailClient="ngModel" required>
@@ -51,10 +48,6 @@
         </mat-hint>
       </mat-form-field>
 
-
-
-
-
       <mat-form-field color="{{numberTelephoneC.invalid && !numberTelephoneC.pristine ? 'warn' : 'primary'}}">
         <input matInput placeholder="number telephone" type="tel" [(ngModel)]="client.numberTelephoneC" name="numberTelephoneC"
                #numberTelephoneC="ngModel" required>
@@ -64,8 +57,6 @@
          </span>
         </mat-hint>
       </mat-form-field>
-
-
 
       <mat-form-field color="{{nitClient.invalid && !nitClient.pristine ? 'warn' : 'primary'}}">
         <input matInput placeholder="Nit - Client" type="number" [(ngModel)]="client.nitClient" name="nitClient"

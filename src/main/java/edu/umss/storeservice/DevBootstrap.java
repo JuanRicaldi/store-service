@@ -11,6 +11,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
+import java.sql.Date;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
@@ -26,13 +27,14 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     private SaleService saleService;
     private SubCategoryService subCategoryService;
     private ClientService clientService;
+    private PromotionsService promotionsService;
 
 
     public DevBootstrap(ClientService clientService,CategoryService categoryService, ContractService contractService,
                         EmployeeService employeeService, ExpenseService expenseService,
                         FeatureInstanceService featureInstanceService, FeatureService featureService,
                         ItemInstanceService itemInstanceService, ItemService itemService, PositionService positionService,
-                        SaleService saleService, SubCategoryService subCategoryService) {
+                        SaleService saleService, SubCategoryService subCategoryService, PromotionsService promotionsService) {
         this.categoryService = categoryService;
         this.contractService = contractService;
         this.employeeService = employeeService;
@@ -45,6 +47,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         this.saleService = saleService;
         this.subCategoryService = subCategoryService;
         this.clientService = clientService;
+        this.promotionsService = promotionsService;
     }
 
     @Override
@@ -54,6 +57,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
     private void initData() {
 
+        //Adding clients
         Client clientlist=new Client();
         clientlist.setFirstNameClient("juan");
         clientlist.setLastNameClient("Perez");
@@ -71,6 +75,35 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         clientlist2.setNumberTelephoneC("89455477");
         clientlist2.setCiClient(99438798);
         clientService.save(clientlist2);
+
+        //Adding promotions
+        Promotions promotion1 = new Promotions();
+        promotion1.setNamePromotion("Promocion camioneta mitad de precio");
+        promotion1.setDiscountPromotion(50);
+        Calendar calendarBegin = Calendar.getInstance();
+        calendarBegin.set(2019, Calendar.AUGUST, 10);
+        Date dateBegin1 = new Date(calendarBegin.getTimeInMillis());
+        promotion1.setStartproDatePro(dateBegin1);
+
+        Calendar calendarEnd = Calendar.getInstance();
+        calendarEnd.set(2019, Calendar.SEPTEMBER, 10);
+        Date dateBegin2 = new Date(calendarEnd.getTimeInMillis());
+        promotion1.setExpiredproDatePro(dateBegin2);
+        promotionsService.save(promotion1);
+
+        Promotions promotion2 = new Promotions();
+        promotion2.setNamePromotion("Promocion 20% de descuento");
+        promotion2.setDiscountPromotion(20);
+        Calendar calendarBeginA = Calendar.getInstance();
+        calendarBeginA.set(2019, Calendar.NOVEMBER, 23);
+        Date dateBeginA = new Date(calendarBeginA.getTimeInMillis());
+        promotion2.setStartproDatePro(dateBeginA);
+
+        Calendar calendarEnd2 = Calendar.getInstance();
+        calendarEnd2.set(2019, Calendar.DECEMBER, 25);
+        Date dateBeginB = new Date(calendarEnd2.getTimeInMillis());
+        promotion2.setExpiredproDatePro(dateBeginB);
+        promotionsService.save(promotion2);
 
         // MAQUINARIA category
         Category maquinariaCategory = new Category();
