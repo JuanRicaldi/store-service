@@ -1,0 +1,50 @@
+<mat-card-content>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="center center" >
+
+      <button mat-raised-button color="primary" (click)="showPromotionsBody()" style="margin-right:20px">Mostrar lista de Promociones</button>
+      <button mat-raised-button color="primary" (click)="openCreatePromotion()" >Agregar Nueva promocion</button>
+
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div>
+      <h1>Lista de Promociones</h1>
+    </div>
+  </div>
+  <div fxLayout="row" *ngIf="showbody">
+    <table mat-table [dataSource]="promotions" class="mat-elevation-z8">
+
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="namePromotion">
+        <th mat-header-cell *matHeaderCellDef>Nombre de Promocion </th>
+        <td mat-cell *matCellDef="let element"> {{element.namePromotion}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="discountPromotion">
+        <th mat-header-cell *matHeaderCellDef> Descuento de la promocion </th>
+        <td mat-cell *matCellDef="let element"> {{element.discountPromotion}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="startproDatePro">
+        <th mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+        <td mat-cell *matCellDef="let element"> {{element.startproDatePro}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="expiredproDatePro">
+        <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
+        <td mat-cell *matCellDef="let element"> {{element.expiredproDatePro}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+
+</mat-card-content>
