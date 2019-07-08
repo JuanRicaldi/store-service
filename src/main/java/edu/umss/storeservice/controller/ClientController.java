@@ -30,7 +30,7 @@ public class ClientController {
     }
 
     @PostMapping
-    protected void addClient(@RequestBody Client client){
+    protected void CreateList(@RequestBody Client client){
         service.save(client);
     }
 }

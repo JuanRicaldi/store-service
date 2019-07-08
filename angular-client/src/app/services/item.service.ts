@@ -33,4 +33,5 @@ export class ItemService {
     return this.http.get(baseURL + 'iteminstances').pipe(map(items => (items as Item[]).map(item => item.id))) as Observable<number[]>;
   }
 
+
 }

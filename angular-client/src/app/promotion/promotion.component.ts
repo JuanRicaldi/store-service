@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {PromotionService} from '../services/promotion.service';
 import {Promotions} from "../shared/promotions";
-import {CreateformComponent} from "../client/createform/createform.component";
+import {CreatepromotionformComponent} from "./createpromotionform/createpromotionform.component";
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class PromotionComponent implements OnInit {
   showbody: boolean;
   displayedColumns: string[] = ['namePromotion','discountPromotion','startproDatePro','expiredproDatePro'];
 
-  constructor(public dialog: MatDialog, private serve: PromotionService) { }
+  constructor( private router: Router, public dialog: MatDialog, private serve: PromotionService) { }
 
   ngOnInit() {
     this.serve.listOfPromotions().subscribe(promotions => {
@@ -32,7 +33,7 @@ export class PromotionComponent implements OnInit {
 
     console.log('probando..');
 
-    //this.dialog.open(CreateformComponent, {width: '500px', height: '450px'});
+    this.dialog.open(CreatepromotionformComponent, {width: '500px', height: '450px'});
 
   }
 

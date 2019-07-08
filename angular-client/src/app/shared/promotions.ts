@@ -1,4 +1,4 @@
-export interface Promotions {
+export class Promotions {
   id: number;
   namePromotion: string;
   discountPromotion: number;

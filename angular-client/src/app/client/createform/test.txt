@@ -1,0 +1,89 @@
+
+<form novalidate (ngSubmit)="onSubmited()" #loginForm="ngForm">
+
+  <mat-dialog-content>
+  <p>
+  <mat-form-field color="{{firstNameClient.invalid && !firstNameClient.pristine ? 'warn' : 'primary'}}">
+  <input matInput placeholder="First Name" type="text"  name="firstNameClient"
+#firstNameClient="ngModel" required>
+<mat-hint>
+<span [hidden]="firstNameClient.pristine">
+<span [hidden]="!firstNameClient.errors?.required">username is required</span>
+</span>
+</mat-hint>
+</mat-form-field>
+
+<mat-form-field color="{{lastNameClient.invalid && !lastNameClient.pristine ? 'warn' : 'primary'}}">
+  <input matInput placeholder="Last Name" type="text" [(ngModel)]="client.lastNameClient" name="lastNameClient"
+#lastNameClient="ngModel" required>
+<mat-hint>
+<span [hidden]="lastNameClient.pristine">
+<span [hidden]="!lastNameClient.errors?.required">Last name is required</span>
+</span>
+</mat-hint>
+</mat-form-field>
+
+
+
+
+<mat-form-field color="{{emailClient.invalid && !emailClient.pristine ? 'warn' : 'primary'}}">
+  <input matInput placeholder="Email " type="email" [(ngModel)]="client.emailClient" name="emailClient"
+#emailClient="ngModel" required>
+<mat-hint>
+<span [hidden]="emailClient.pristine">
+<span [hidden]="!emailClient.errors?.required">username is required</span>
+</span>
+</mat-hint>
+</mat-form-field>
+
+
+
+
+
+<mat-form-field color="{{numberTelephoneC.invalid && !numberTelephoneC.pristine ? 'warn' : 'primary'}}">
+  <input matInput placeholder="number telephone" type="tel" [(ngModel)]="client.numberTelephoneC" name="numberTelephoneC"
+#numberTelephoneC="ngModel" required>
+<mat-hint>
+<span [hidden]="numberTelephoneC.pristine">
+<span [hidden]="!numberTelephoneC.errors?.required">Number Telephone is required</span>
+</span>
+</mat-hint>
+</mat-form-field>
+
+
+
+<mat-form-field color="{{nitClient.invalid && !nitClient.pristine ? 'warn' : 'primary'}}">
+  <input matInput placeholder="Nit - Client" type="number" [(ngModel)]="client.nitClient" name="nitClient"
+#nitClient="ngModel" required>
+<mat-hint>
+<span [hidden]="nitClient.pristine">
+<span [hidden]="!nitClient.errors?.required">username is required</span>
+</span>
+</mat-hint>
+</mat-form-field>
+
+<mat-form-field color="{{ciClient.invalid && !ciClient.pristine ? 'warn' : 'primary'}}">
+  <input matInput placeholder="CI - Client" type="number" [(ngModel)]="client.ciClient" name="ciClient"
+#ciClient="ngModel" required>
+<mat-hint>
+<span [hidden]="ciClient.pristine">
+<span [hidden]="!ciClient.errors?.required">username is required</span>
+</span>
+</mat-hint>
+</mat-form-field>
+
+<mat-dialog-actions>
+<span class="flex-spacer"></span>
+  <button mat-button mat-dialog-close>Cancel</button>
+<button (click)="SaveClientall()" type="submit" mat-button class="background-primary text-floral-white" >
+  Guardar
+  </button>
+  </mat-dialog-actions>
+
+  </mat-dialog-content>
+
+  </form>
+
+
+
+

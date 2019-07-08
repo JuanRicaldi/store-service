@@ -9,37 +9,9 @@
     </div>
   </div>
 
-  <div fxFlex>
-    <h3>Information de nuestra ubicación</h3>
-    <div fxLayout="column" fxLayout.gt-sm="row">
-      <div fxFlex="50" fxFlexOffset="20px">
-        <h4>Nuestra dirección</h4>
-        <address style="text-size: 80%">
-          <i class="fa fa-map-marker"></i>: Av. Villazon Km 10 <br> Sacaba, Cochabamba, Bolivia<br>
-          <i class="fa fa-mobile"></i>: +581 76929321<br>
-          <i class="fa fa-whatsapp"></i>: +581 60382038<br>
-          <i class="fa fa-phone"></i>: +581 4664677<br>
-          <i class="fa fa-fax"></i>: +581 4664677<br>
-          <i class="fa fa-envelope"></i>:
-          <a href="mailto:rd-info@gmail.com">rd-info@gmail.com</a>
-
-        </address>
-        <p></p>
-        <div>
-          <a mat-raised-button href="tel: +581 4664677"><i class="fa fa-phone"></i> Call</a>
-          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
-          <a mat-raised-button href="mailto: rd-info@gmail.com "><i class="fa fa-envelope-o"></i> Email</a>
-        </div>
-      </div>
-      <div fxFlex="40">
-        <h4>Mapa de nustra Ubicación</h4>
-      </div>
-    </div>
-  </div>
-
   <div fxFlex fxFlexOffset="20px" class="form-size">
     <h3>Envianos tu mensaje</h3>
-    <p>{{ messageForm.value | json }} {{ messageForm.status | json }}</p>
+<!--    <p>{{ messageForm.value | json }} {{ messageForm.status | json }}</p>-->
     <form novalidate [formGroup]="messageForm" (ngSubmit)="onSubmit()" id="form">
       <p>
         <mat-form-field class="half-width"
@@ -101,5 +73,33 @@
       </button>
     </form>
   </div>
+
+<!--  <div fxFlex>-->
+<!--    <h3>Information de nuestra ubicación</h3>-->
+<!--    <div fxLayout="column" fxLayout.gt-sm="row">-->
+<!--      <div fxFlex="50" fxFlexOffset="20px">-->
+<!--        <h4>Nuestra dirección</h4>-->
+<!--        <address style="text-size: 80%">-->
+<!--          <i class="fa fa-map-marker"></i>: Av. Villazon Km 10 <br> Sacaba, Cochabamba, Bolivia<br>-->
+<!--          <i class="fa fa-mobile"></i>: +581 76929321<br>-->
+<!--          <i class="fa fa-whatsapp"></i>: +581 60382038<br>-->
+<!--          <i class="fa fa-phone"></i>: +581 4664677<br>-->
+<!--          <i class="fa fa-fax"></i>: +581 4664677<br>-->
+<!--          <i class="fa fa-envelope"></i>:-->
+<!--          <a href="mailto:rd-info@gmail.com">rd-info@gmail.com</a>-->
+
+<!--        </address>-->
+<!--        <p></p>-->
+<!--        <div>-->
+<!--          <a mat-raised-button href="tel: +581 4664677"><i class="fa fa-phone"></i> Call</a>-->
+<!--          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>-->
+<!--          <a mat-raised-button href="mailto: rd-info@gmail.com "><i class="fa fa-envelope-o"></i> Email</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div fxFlex="40">-->
+<!--        <h4>Mapa de nustra Ubicación</h4>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 
 </div>

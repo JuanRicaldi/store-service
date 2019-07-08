@@ -11,31 +11,31 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./createform.component.scss']
 })
 
-export class CreateformComponent implements OnInit{
+export class CreateformComponent implements OnInit {
 
-   client: Client;
+  client = new Client();
 
-
-  constructor(private route: ActivatedRoute,
-              private router: Router,
-              public dialogRef: MatDialogRef<CreateformComponent>,
-              private clientService : ClientService) {
-  }
+  constructor(private route: Router , private serve: ClientService , public dialogRef: MatDialogRef<CreateformComponent>) { }
 
   ngOnInit() {
 
-    console.log(this.client);
   }
 
 
-  onSubmit() {
+  onSubmited() {
 
-    this.clientService.addClient(this.client).subscribe(result => this.goToClientList());
-    //this.client = new Client();
-    this.dialogRef.close();
+    this.serve.CreateList(this.client).subscribe(res => {
+      console.log(res);
+
+      this.dialogRef.close();
+      location.reload();
+
+    });
+
+    // console.log('verificando....');
+    // this.dialogRef.close();
+
   }
 
-  goToClientList(){
-    this.router.navigate(['/clients']);
-  }
+
 }

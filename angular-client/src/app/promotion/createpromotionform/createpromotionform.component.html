@@ -1,0 +1,76 @@
+<div >
+
+
+  <mat-toolbar fxLayout="row" mat-dialog-title color="primary">
+    <div fxFlex>
+      <h3 layout-align="center center">Crear nueva promocion</h3>
+    </div>
+    <span fxFlex class="flex-spacer"></span>
+    <div fxFlex align="end">
+      <button mat-button mat-dialog-close>&times;</button>
+    </div>
+  </mat-toolbar>
+
+</div>
+
+
+<form novalidate #createpromotionform="ngForm">
+
+  <mat-dialog-content>
+    <p>
+
+      <mat-form-field color="{{namePromotion.invalid && !namePromotion.pristine ? 'warn' : 'primary'}}">
+        <input matInput placeholder="Nombre de la promocion" type="text"  name="namePromotion" [(ngModel)]="promotions.namePromotion"
+               #namePromotion="ngModel" required>
+        <mat-hint>
+<span [hidden]="namePromotion.pristine">
+<span [hidden]="!namePromotion.errors?.required">promotion name is required</span>
+</span>
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field color="{{discountPromotion.invalid && !discountPromotion.pristine ? 'warn' : 'primary'}}">
+        <input matInput placeholder="Descuento" type="number" [(ngModel)]="promotions.discountPromotion" name="discountPromotion"
+               #discountPromotion="ngModel" required>
+        <mat-hint>
+<span [hidden]="discountPromotion.pristine">
+<span [hidden]="!discountPromotion.errors?.required">discount promotion is required</span>
+</span>
+        </mat-hint>
+      </mat-form-field>
+
+
+      <mat-form-field color="{{startproDatePro.invalid && !startproDatePro.pristine ? 'warn' : 'primary'}}">
+        <input matInput placeholder="Fecha de inicio" type="date" [(ngModel)]="promotions.startproDatePro" name="startproDatePro"
+               #startproDatePro="ngModel" required>
+        <mat-hint>
+<span [hidden]="startproDatePro.pristine">
+<span [hidden]="!startproDatePro.errors?.required">Started date is required</span>
+</span>
+        </mat-hint>
+      </mat-form-field>
+
+
+      <mat-form-field color="{{expiredproDatePro.invalid && !expiredproDatePro.pristine ? 'warn' : 'primary'}}">
+        <input matInput placeholder="Fecha de fin" type="date" [(ngModel)]="promotions.expiredproDatePro" name="expiredproDatePro"
+               #expiredproDatePro="ngModel" required>
+        <mat-hint>
+<span [hidden]="expiredproDatePro.pristine">
+<span [hidden]="!expiredproDatePro.errors?.required">End date is required</span>
+</span>
+        </mat-hint>
+      </mat-form-field>
+
+
+      <mat-dialog-actions>
+        <span class="flex-spacer"></span>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button (click)="onSubmited()" type="submit" mat-button class="background-primary text-floral-white" [disabled]="createpromotionform.form.invalid">
+          Guardar
+        </button>
+
+      </mat-dialog-actions>
+
+  </mat-dialog-content>
+
+</form>

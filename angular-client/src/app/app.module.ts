@@ -50,8 +50,8 @@ import {baseURL} from './shared/baseurl';
 import {HttpClientModule} from '@angular/common/http';
 import { ClientComponent } from './client/client.component';
 import { CreateformComponent } from './client/createform/createform.component';
-import { ClientService} from "./services/client.service";
 import { PromotionComponent } from "./promotion/promotion.component";
+import { CreatepromotionformComponent } from "./promotion/createpromotionform/createpromotionform.component";
 
 @NgModule({
   declarations: [
@@ -66,7 +66,8 @@ import { PromotionComponent } from "./promotion/promotion.component";
     LoginComponent,
     ClientComponent,
     CreateformComponent,
-    PromotionComponent
+    PromotionComponent,
+    CreatepromotionformComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -81,7 +82,7 @@ import { PromotionComponent } from "./promotion/promotion.component";
     {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
-    LoginComponent, CreateformComponent
+    LoginComponent, CreateformComponent, CreatepromotionformComponent
   ],
   bootstrap: [AppComponent]
 })

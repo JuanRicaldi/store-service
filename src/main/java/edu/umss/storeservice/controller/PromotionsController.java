@@ -28,8 +28,8 @@ public class PromotionsController {
         return this.service.findAll();
     }
 
-    /*@PostMapping
+    @PostMapping
     protected void addPromotion(@RequestBody Promotions promotions){
         service.save(promotions);
-    }*/
+    }
 }

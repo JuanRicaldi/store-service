@@ -3,6 +3,7 @@ import {Client} from '../shared/client';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {CreateformComponent} from './createform/createform.component';
 import {ClientService} from '../services/client.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,10 +17,10 @@ import {ClientService} from '../services/client.service';
 export class ClientComponent implements OnInit {
    clients: Client[];
    showbody: boolean;
-   displayedColumns: string[] = ['firstNameClient', 'lastNameClient', 'emailClient', 'numberTelephoneC', 'nitClient', 'ciClient'];
+   displayedColumns: string[] = ['firstNameClient', 'lastNameClient', 'emailClient', 'numberTelephoneC', 'nitClient', 'ciClient', 'accion'];
 
 
-  constructor(public dialog: MatDialog, private serve: ClientService) { }
+  constructor(private router: Router, public dialog: MatDialog, private serve: ClientService) { }
 
   ngOnInit() {
     this.serve.listofclient().subscribe(clients => {
@@ -45,6 +46,17 @@ export class ClientComponent implements OnInit {
     this.showbody = !this.showbody;
   }
 
+
+  DeleteClient(client: Client) {
+    console.log(client);
+    console.log('verificando delete');
+    this.serve.DeleteClient(client).subscribe(
+        data => {
+        this.clients = this.clients.filter(c => c !== client);
+        alert('user delete... ');
+
+        });
+  }
 
 
 }

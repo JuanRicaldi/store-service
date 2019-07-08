@@ -16,8 +16,10 @@ export class PromotionService {
     return this.http.get(baseURL + 'promotion') as Observable<Promotions[]>;
   }
 
-  addPromotion(promotion : Promotions) {
-    return this.http.post<Promotions>(baseURL + 'promotion', promotion);
+  addPromotion(form: Promotions): Observable<Promotions> {
+
+    return this.http.post(baseURL + 'promotion', form) as Observable<Promotions>;
+
   }
 
 }

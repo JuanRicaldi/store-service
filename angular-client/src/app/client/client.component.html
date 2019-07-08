@@ -21,13 +21,13 @@
 
     <!-- Position Column -->
     <ng-container matColumnDef="firstNameClient">
-      <th mat-header-cell *matHeaderCellDef>First Name </th>
+      <th mat-header-cell *matHeaderCellDef>Nombre </th>
       <td mat-cell *matCellDef="let element"> {{element.firstNameClient}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="lastNameClient">
-      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <th mat-header-cell *matHeaderCellDef> Apellido </th>
       <td mat-cell *matCellDef="let element"> {{element.lastNameClient}} </td>
     </ng-container>
 
@@ -39,7 +39,7 @@
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="numberTelephoneC">
-      <th mat-header-cell *matHeaderCellDef> Telephone </th>
+      <th mat-header-cell *matHeaderCellDef> Telephono </th>
       <td mat-cell *matCellDef="let element"> {{element.numberTelephoneC}} </td>
     </ng-container>
 
@@ -47,13 +47,26 @@
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="nitClient">
-      <th mat-header-cell *matHeaderCellDef> Nit Client </th>
+      <th mat-header-cell *matHeaderCellDef> Nit </th>
       <td mat-cell *matCellDef="let element"> {{element.nitClient}} </td>
     </ng-container>
 
+    <!-- Symbol Column -->
+
     <ng-container matColumnDef="ciClient">
-      <th mat-header-cell *matHeaderCellDef> Ci Client </th>
+      <th mat-header-cell *matHeaderCellDef> C.I. </th>
       <td mat-cell *matCellDef="let element"> {{element.ciClient}} </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="accion">
+      <th mat-header-cell *matHeaderCellDef> Accion </th>
+      <td mat-header-cell *matCellDef="let row">
+        <button mat-icon-button color="warn" (click)="DeleteClient(row)"><mat-icon>delete_outline</mat-icon></button>
+
+      </td>
+
     </ng-container>
 
 <!--<ng-container matColumnDef="acciones2">-->

@@ -7,28 +7,12 @@
 
   <mat-card *ngIf="item" fxFlex>
     <mat-card-header>
-      <div mat-card-avatar></div>
       <mat-card-title>
-        <h3>{{item.name | uppercase}}</h3>
+        <h3>Bienvenidos al sistema de informacion</h3>
       </mat-card-title>
     </mat-card-header>
-    <img mat-card-image data-src="data:image/png;base64,{{item.image}}" alt={{item.name}}>
     <mat-card-content>
-      <p>{{item.description}}
-      </p>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card *ngIf="employee" fxFlex>
-    <mat-card-header>
-      <div mat-card-avatar></div>
-      <mat-card-title>
-        <h3>{{employee.name | uppercase}}</h3>
-      </mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src={{employee.image}} alt={{employee.name}}>
-    <mat-card-content>
-      <p>{{employee.jobDescription}}
+      <p>En este sistema podemos albergar informacion de usuario, contactos y tambien lo que se refiere a las promociones
       </p>
     </mat-card-content>
   </mat-card>
